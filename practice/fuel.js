@@ -2,5 +2,5 @@ const car = {
   fuel: 60
 };
 
-const { fuel } = car;
-console.log(fuel);
+const { fuel: myFuel } = car;
+console.log("myFuel => ", myFuel);
