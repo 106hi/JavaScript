@@ -1,6 +1,10 @@
 const car = {
-  fuel: 60
+  fuel: 60,
+  info: {
+    model: "X-1976"
+  }
 };
 
-const { fuel: myFuel } = car;
-console.log("myFuel => ", myFuel);
+const { fuel, info: { model }} = car;
+console.log(fuel);
+console.log(model);
