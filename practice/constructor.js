@@ -1,18 +1,19 @@
 class Car {
-  constructor(fuel) {
+  // economyRateが渡されない場合は、デフォルト値として1を設定すること
+  constructor(fuel, economyRate = 1) {
     this.fuel = fuel;
+    this.economyRate = economyRate;
   }
   run(distance) {
     // コンストラクタでthisコンテキストに設定した値はthisで参照できるようになる
-    this.fuel = this.fuel - distance;
+    this.fuel = this.fuel - distance * this.economyRate;
     console.log(`走行距離${distance},現在の燃料は${this.fuel}`);
   }
 }
 class Truck extends Car {
-  run(distance) {
-    // トラックは燃料が悪いので距離の２倍燃料を消費するようにする
-    this.fuel = this.fuel - distance * 2;
-    console.log(`走行距離${distance},現在の燃料は${this.fuel}`);
+  constructor(fuel) {
+    const economyRate = 2;
+    super(fuel, economyRate);
   }
 }
 // 燃料を60積んだ車を作る
