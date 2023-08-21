@@ -8,6 +8,12 @@ class Car {
     console.log(`走行距離${distance},現在の燃料は${this.fuel}`);
   }
 }
+class Truck extends Car {
+
+}
 // 燃料を60積んだ車を作る
 const car = new Car(60);
+// 燃料を100積んだトラックを作る
+const truck = new Truck(100);
 car.run(5);
+truck.run(10);
